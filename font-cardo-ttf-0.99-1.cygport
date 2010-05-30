@@ -1,0 +1,16 @@
+inherit font
+
+DESCRIPTION="Unicode TrueType font for linguistics"
+HOMEPAGE="http://scholarsfonts.net/cardofnt.html"
+SRC_URI="http://scholarsfonts.net/cardo${PV[2]}.zip"
+SRC_DIR=.
+
+src_compile() { :; }
+
+src_install() {
+	cd ${S}
+	fontinto TTF
+	dofont *.ttf
+
+	dodoc *.pdf
+}
